@@ -76,3 +76,30 @@ async def process(req: dict):
         "suggestions": result['suggestions'], 
         "reply": professional_reply
     }
+
+@app.post("/save-interaction")
+async def save_interaction(data: dict):
+    conn = sqlite3.connect('crm_database.db')
+    cursor = conn.cursor()
+    
+    # This creates the table if it doesn't exist
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS interactions (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            hcpName TEXT,
+            topics TEXT,
+            sentiment TEXT,
+            date TEXT,
+            materials TEXT
+        )
+    ''')
+    
+    # This inserts the data from your frontend
+    cursor.execute('''
+        INSERT INTO interactions (hcpName, topics, sentiment, date, materials)
+        VALUES (?, ?, ?, ?, ?)
+    ''', (data.get('hcpName'), data.get('topics'), data.get('sentiment'), data.get('date'), data.get('materials')))
+    
+    conn.commit()
+    conn.close()
+    return {"status": "Sales Log Saved to Database!"}
