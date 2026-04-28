@@ -1,0 +1,201 @@
+/* Import Google Inter Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Layout Containers */
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Left Hand Side: Form Panel */
+.form-panel {
+  flex: 7;
+  padding: 30px;
+  background-color: #ffffff;
+  overflow-y: auto;
+  border-right: 1px solid #dee2e6;
+}
+
+.form-panel h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #212529;
+  margin-bottom: 25px;
+}
+
+.field-group {
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 5px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Locked/Read-Only State for LHS */
+.readonly-input {
+  background-color: #fcfcfc !important;
+  border: 1px solid #eee !important;
+  color: #555 !important;
+  cursor: not-allowed;
+  resize: none;
+}
+
+/* Right Hand Side: Chat Panel */
+.chat-panel {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.chat-header {
+  font-weight: 700;
+  padding: 20px;
+  color: #007bff;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chat-history {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fbfbfb;
+}
+
+/* Chat Bubbles */
+.user-msg, .bot-msg {
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  max-width: 85%;
+  font-size: 0.95rem;
+}
+
+.user-msg {
+  align-self: flex-end;
+  background: #e3f2fd;
+  color: #0d47a1;
+  border-radius: 18px 18px 2px 18px;
+  border: 1px solid #bbdefb;
+}
+
+.bot-msg {
+  align-self: flex-start;
+  background: #f1f8e9;
+  color: #2e7d32;
+  border-radius: 18px 18px 18px 2px;
+  border: 1px solid #c8e6c9;
+}
+
+/* Messaging Area */
+.chat-input-area {
+  display: flex;
+  align-items: flex-end; 
+  gap: 10px;
+  padding: 15px;
+  background: white;
+  border-top: 1px solid #dee2e6;
+}
+
+.chat-input-area textarea {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ced4da;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  max-height: 150px;
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.chat-input-area textarea:focus {
+  border-color: #007bff;
+}
+
+/* UI Components */
+.log-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 25px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.log-btn:hover {
+  background: #0056b3;
+}
+
+.sentiment-row {
+  display: flex;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.voice-note {
+  color: #007bff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.input-with-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.icon-btn {
+  white-space: nowrap;
+  background: #fff;
+  border: 1px solid #ced4da;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
